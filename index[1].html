@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bharat Vaani - Indian Language Recognition</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header-row">
+        <div class="menu-title">Bharat Vaani</div>
+        <div class="header-tools">
+            <label for="modeSelect">Mode:</label>
+            <select id="modeSelect">
+                <option value="translation">Translation Mode</option>
+                <option value="lesson">Teaching Mode</option>
+            </select>
+            <button id="compileButton" class="menu-button">📄 Compile Document</button>
+        </div>
+    </div>
+    <div class="history-nav-row">
+        <button id="historyToggle" class="menu-button history-toggle">History</button>
+    </div>
+    <div id="historyPanel" class="history-panel">
+        <div class="history-header">
+            <h2>History</h2>
+            <button id="clearHistoryButton" class="clear-history">Clear</button>
+        </div>
+        <div id="historyList" class="history-list"></div>
+    </div>
+    <div id="toast" class="toast"></div>
+    <div class="app-background"></div>
+    <div class="container">
+        <div class="title-container">
+            <h1 class="main-title">
+                <span class="title-text saffron" title="Hindi">भ</span>
+                <span class="title-text white" title="Telugu">హ</span>
+                <span class="title-text green" title="Tamil">அ</span>
+                <span class="title-text saffron" title="Malayalam">ര</span>
+                <span class="title-text white" title="Kannada">ತ್</span>
+                <span class="title-divider">|</span>
+                <span class="title-text green" title="Bengali">ভা</span>
+                <span class="title-text saffron" title="Gujarati">વા</span>
+                <span class="title-text white" title="Marathi">णी</span>
+            </h1>
+            <div class="subtitle">Bharat Vaani</div>
+            <div class="chakra">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/17/Ashoka_Chakra.svg" alt="Ashoka Chakra">
+            </div>
+        </div>
+        <div class="controls">
+            <select id="languageSelect">
+                <option value="en-US">English</option>
+                <option value="hi-IN">Hindi</option>
+                <option value="te-IN">Telugu</option>
+                <option value="ta-IN">Tamil</option>
+                <option value="kn-IN">Kannada</option>
+                <option value="ml-IN">Malayalam</option>
+                <option value="mr-IN">Marathi</option>
+                <option value="bn-IN">Bengali</option>
+                <option value="gu-IN">Gujarati</option>
+            </select>
+            <button id="startButton">Start Recording</button>
+            <button id="stopButton" disabled>Stop Recording</button>
+        </div>
+        
+
+        <div class="status" id="status">Click 'Start Recording' to begin</div>
+        <div id="visualizer" class="visualizer"></div>
+        <div class="transcript-container">
+            <h2>Transcript</h2>
+            <div id="transcript" class="transcript"></div>
+            <!-- Translation controls -->
+            <div class="translation-controls">
+                <label for="translationLanguage">Translate to:</label>
+                <select id="translationLanguage">
+                    <option value="en">English</option>
+                    <option value="hi">Hindi</option>
+                    <option value="te">Telugu</option>
+                    <option value="ta">Tamil</option>
+                    <option value="kn">Kannada</option>
+                    <option value="ml">Malayalam</option>
+                    <option value="mr">Marathi</option>
+                    <option value="bn">Bengali</option>
+                    <option value="gu">Gujarati</option>
+                    <option value="fr">French</option>
+                    <option value="es">Spanish</option>
+                    <option value="de">German</option>
+                    <option value="ja">Japanese</option>
+                    <option value="zh">Chinese</option>
+                </select>
+                <button id="reverseButton" class="reverse-button" title="Reverse">↔</button>
+            </div>
+            <div class="speech-controls">
+                <button id="speakButton" class="speak-button" disabled>
+                    <span class="speak-icon">🔊</span> Speak Translation
+                </button>
+                <button id="stopSpeakButton" class="speak-button" aria-label="Stop Speaking" disabled>S</button>
+            </div>
+            
+        </div>
+    </div>
+    <div id="compileModal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-title">Export Document</div>
+            <div class="modal-text">Choose format:</div>
+            <div class="modal-actions">
+                <button id="compileWord" class="menu-button">Word (.doc)</button>
+                <button id="compilePdf" class="menu-button">PDF</button>
+                <button id="compileCancel" class="menu-button">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js?v=1"></script>
+</body>
+</html>
